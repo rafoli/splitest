@@ -5,6 +5,8 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.gradle.api.Project
 import static org.junit.Assert.*
 
+import io.splitest.task.AllTestTask;
+
 import io.splitest.task.UnitTestTask;
 import io.splitest.task.IntegrationTestTask;
 import io.splitest.task.FunctionalTestTask;
@@ -32,5 +34,13 @@ class SplitestPluginTest {
         project.pluginManager.apply 'io.splitest'
 
         assertTrue(project.tasks.functionalTest instanceof FunctionalTestTask)
+    }
+    
+    @Test
+    public void splitestPluginAddsAllTaskToProject() {
+        Project project = ProjectBuilder.builder().build()
+        project.pluginManager.apply 'io.splitest'
+
+        assertTrue(project.tasks.allTest instanceof AllTestTask)
     }
 }

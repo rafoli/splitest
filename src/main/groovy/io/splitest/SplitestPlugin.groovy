@@ -3,12 +3,37 @@ package io.splitest
 import org.gradle.api.Project
 import org.gradle.api.Plugin
 
+import io.splitest.task.AllTestTask
+
+import io.splitest.task.UnitTestTask
+import io.splitest.task.FunctionalTestTask
+import io.splitest.task.IntegrationTestTask
+
 class SplitestPlugin implements Plugin<Project> {
+
+	public static final String GROUP = 'Splitest'
+
     void apply(Project project) {
     
-        project.task('unitTest', type: UnitTest)
-        project.task('functionalTest', type: FunctionalTest)
-        project.task('integrationTest', type: IntegrationTest)
+    	project.task('allTest', 
+    		type: AllTestTask, 
+    		group: GROUP,
+    		description: "Execute all tests")
+    
+        project.task('unitTest', 
+        	type: UnitTestTask, 
+        	group: GROUP,
+        	description: "Execute unit tests")
+        	
+        project.task('functionalTest', 
+        	type: FunctionalTestTask, 
+        	group: GROUP,
+        	description: "Execute functional tests")
+        	
+        project.task('integrationTest', 
+        	type: IntegrationTestTask, 
+        	group: GROUP,
+        	description: "Execute integration tests")
         
     }
 }

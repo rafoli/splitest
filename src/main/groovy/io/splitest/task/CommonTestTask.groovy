@@ -4,12 +4,12 @@ import org.gradle.api.tasks.testing.Test;
 
 class CommonTestTask extends Test {
 
-	public CommonTest() {
+	public CommonTestTask() {
      	
 		testLogging {
 	        events "passed", "skipped", "failed"
 	        showExceptions true
-	        exceptionFormat "short"
+	        exceptionFormat "full"
 	        showCauses true
 	        showStackTraces true
 	        
