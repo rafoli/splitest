@@ -10,8 +10,8 @@ class CommonTestTask extends Test {
 	        events "passed", "skipped", "failed"
 	        showExceptions true
 	        exceptionFormat "full"
-	        showCauses true
-	        showStackTraces true
+	        showCauses false
+	        showStackTraces false
 	        
 	
 	        afterSuite { desc, result ->
