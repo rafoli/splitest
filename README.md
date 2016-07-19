@@ -14,6 +14,8 @@ JUnit Cateogories (org.junit.experimental.categories.Category) made easy!
 
 # Usage
 
+Full doc: https://plugins.gradle.org/plugin/io.splitest
+
 ### Gradle 2.1+
 
 ```gradle
