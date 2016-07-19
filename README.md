@@ -1,5 +1,7 @@
 # Splitest
 
+[![Build Status](https://semaphoreci.com/api/v1/rafoli/splitest/branches/master/badge.svg)](https://semaphoreci.com/rafoli/splitest)
+
 JUnit Cateogories (org.junit.experimental.categories.Category) made easy!
 
 * @AcceptanceTest
