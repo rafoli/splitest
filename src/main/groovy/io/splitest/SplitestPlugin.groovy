@@ -8,6 +8,7 @@ import io.splitest.task.AllTestTask
 import io.splitest.task.UnitTestTask
 import io.splitest.task.FunctionalTestTask
 import io.splitest.task.IntegrationTestTask
+import io.splitest.task.SanityTestTask
 
 class SplitestPlugin implements Plugin<Project> {
 
@@ -29,6 +30,11 @@ class SplitestPlugin implements Plugin<Project> {
         	type: FunctionalTestTask, 
         	group: GROUP,
         	description: "Execute functional tests")
+        	
+        project.task('sanityTest', 
+        	type: SanityTestTask, 
+        	group: GROUP,
+        	description: "Execute sanity tests")        	
         	
         project.task('integrationTest', 
         	type: IntegrationTestTask, 

@@ -10,6 +10,7 @@ import io.splitest.task.AllTestTask;
 import io.splitest.task.UnitTestTask;
 import io.splitest.task.IntegrationTestTask;
 import io.splitest.task.FunctionalTestTask;
+import io.splitest.task.SanityTestTask;
 
 class SplitestPluginTest {
     @Test
@@ -34,6 +35,14 @@ class SplitestPluginTest {
         project.pluginManager.apply 'io.splitest'
 
         assertTrue(project.tasks.functionalTest instanceof FunctionalTestTask)
+    }
+    
+    @Test
+    public void splitestPluginAddsSanityTaskToProject() {
+        Project project = ProjectBuilder.builder().build()
+        project.pluginManager.apply 'io.splitest'
+
+        assertTrue(project.tasks.sanityTest instanceof SanityTestTask)
     }
     
     @Test

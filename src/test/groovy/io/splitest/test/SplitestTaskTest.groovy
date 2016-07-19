@@ -10,6 +10,7 @@ import io.splitest.task.AllTestTask;
 import io.splitest.task.UnitTestTask;
 import io.splitest.task.IntegrationTestTask;
 import io.splitest.task.FunctionalTestTask;
+import io.splitest.task.SanityTestTask;
 
 class SplitestTaskTest {
     @Test
@@ -24,6 +25,9 @@ class SplitestTaskTest {
 
         def functionalTestTask = project.task('functionalTestTask', type: FunctionalTestTask)
         assertTrue(functionalTestTask instanceof FunctionalTestTask)
+        
+        def sanityTestTask = project.task('sanityTestTask', type: SanityTestTask)
+        assertTrue(sanityTestTask instanceof SanityTestTask)
         
         def allTestTask = project.task('allTestTask', type: AllTestTask)
         assertTrue(allTestTask instanceof AllTestTask)
